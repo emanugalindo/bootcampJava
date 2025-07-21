@@ -2,7 +2,7 @@ package exercicios;
 
 import java.util.Scanner;
 
-public class Exercício3 {
+public class Exercicio3 {
     public static void main(String[] args) {
         var scanner = new Scanner(System.in);
         System.out.println("Digite a base do retângulo:");
