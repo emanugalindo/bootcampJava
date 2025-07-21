@@ -2,15 +2,20 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Operadores Bitwise(Bit-a-Bit)
-        var value1 = -12;
-        var binary1 = Integer.toBinaryString(value1);
-        System.out.printf("Primeiro número da operação %s (representação binária %s)\n", value1, binary1);
-        var value2 = 2;
-        //var binary2 = Integer.toBinaryString(value2);
-        System.out.printf("Segundo número da operação %s\n", value2);
-        var result =  value1 >>> value2;
-        var binaryResult = Integer.toBinaryString(result);
-        System.out.printf("%s >>> %s = %s (representação binária %s)\n", value1, value2, result, binaryResult);
+        var scanner = new Scanner(System.in);
+        System.out.println("Informe seu nome:");
+        var name = scanner.next();
+        System.out.println("Informe sua idade:");
+        var age = scanner.nextInt();
+        System.out.println("Você é emancipado? (s/n)");
+        var isEmancipated = scanner.next().equalsIgnoreCase("s");
+
+        var canDrive = (age >= 18) || (age >= 16 && isEmancipated);
+        var message = canDrive ?
+                name + ", você pode dirigir\n" :
+                name +", você não pode dirigir\n";
+
+        System.out.println(message);
+        System.out.println("Fim da execução");
     }
 }
